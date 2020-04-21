@@ -1,17 +1,24 @@
-# Python Discord Transport
+# Python Discord Logger
 
-A custom message transporter to Discord for Python.
+A custom message logger to Discord for Python.
 
 
 ## Install
-Install via pip: `pip install discord-transport`
+Install via pip: `pip install discord-logger`
 
 
 ## Basic Usage
 ```
-from discord-transport import DiscordTransport
+from discord_logger import DiscordLogger
 
-discord_messager = DiscordTransport(webhook_url=)
+options = {
+    "application_name": "My Server",
+    "service_name": "My API",
+    "service_icon_url": "my application url",
+    "service_environment": "Production",
+    "default_level": "info",
+}
+logger = DiscordLogger(webhook_url="your webhook url", **options)
 ```
 
 The `Host` is automatically added for every message for easy identification.

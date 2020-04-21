@@ -3,7 +3,7 @@ from socket import gethostname
 from discord_webhook import DiscordEmbed, DiscordWebhook
 
 
-class DiscordTransport:
+class DiscordLogger:
     """
     Python message transporter for Discord
     """
@@ -86,6 +86,8 @@ class DiscordTransport:
             )
 
         embed.set_timestamp()
+
+        self.discord.add_embed(embed)
 
     def send(self):
         response = self.discord.execute()
