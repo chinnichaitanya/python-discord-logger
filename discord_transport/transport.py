@@ -71,7 +71,7 @@ class DiscordTransport:
 
         embed.set_author(
             name=self.service_name,
-            icon_url=self.service_icon,
+            icon_url=self.service_icon_url,
         )
 
         if self.service_environment is not None:
