@@ -25,9 +25,11 @@ logger.construct(title="Health Check", description="All services are running nor
 response = logger.send()
 ```
 
+![Image](images/basic_message.png "Basic Usage")
+
 ## Examples
 
-### Set Service name, icon and environment for easy identification
+### Set Service Name, Icon and Environment for easy identification
 
 You can configure the log message with service name, icon and environment for easy identification. The `Host` field which is the hostname of the server is automatically added for every message.
 
@@ -52,6 +54,8 @@ logger.construct(
 
 response = logger.send()
 ```
+
+![Image](images/error_message.png "Message with Service Name, Icon and Environment")
 
 ### Send messages with different log-levels
 
@@ -88,6 +92,8 @@ logger.construct(
 
 response = logger.send()
 ```
+
+![Image](images/success_message.png "Message with success log-level")
 
 - Send complete error traceback
 
@@ -128,3 +134,5 @@ logger.construct(
 
 response = logger.send()
 ```
+
+![Image](images/complete_error_message.png "Message with complete error traceback")
