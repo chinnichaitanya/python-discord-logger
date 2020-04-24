@@ -4,7 +4,7 @@ with open("README.md", mode="r") as fd:
     long_description = fd.read()
 
 setuptools.setup(
-    name="discord-logger-chinnichaitanya",
+    name="discord-logger",
     version="1.0.0",
     author="Chaitanya Chinni",
     description="Disccord Logger is a custom message logger to Discord for Python 3.",
