@@ -135,4 +135,4 @@ logger.construct(
 response = logger.send()
 ```
 
-![Image](images/complete_error_message.png "Message with complete error traceback")
+![Image](images/complete_error_traceback.png "Message with complete error traceback")
