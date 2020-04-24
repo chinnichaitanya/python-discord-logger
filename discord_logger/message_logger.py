@@ -62,10 +62,9 @@ class DiscordLogger:
         if error is not None:
             color = self.COLORS.get("error")
             if description is None:
-                description = str(error)
+                description = "```" + str(error) + "```"
             else:
-                description = description + "\n" + str(error)
-
+                description = description + "\n" + "```" + str(error) + "```"
 
         embed = DiscordEmbed(title=title, description=description, color=color)
 
