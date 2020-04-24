@@ -1,0 +1,14 @@
+# Python cache
+*.py[cod]
+*$py.class
+__pycache__/
+
+# Virtual environment folder
+.env/
+
+# Pickle files
+*.pkl
+
+# DS Store
+.DS_Store
+
