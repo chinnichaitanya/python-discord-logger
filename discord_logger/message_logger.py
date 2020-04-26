@@ -48,7 +48,14 @@ class DiscordLogger:
 
         self.discord = DiscordWebhook(url=self.webhook_url, username=self.application_name)
 
+    def __remove_embeds(self):
+        existing_embeds = self.discord.get_embeds()
+        for i in reversed(range(0, len(existing_embeds))):
+            self.discord.remove_embed(i)
+
     def construct(self, title, description, level=None, error=None):
+        self.__remove_embeds()
+
         if title is not None:
             title = str(title)
         if description is not None:
