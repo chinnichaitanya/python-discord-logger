@@ -5,6 +5,7 @@ This project was inspired from [`winston-discord-transport`](https://github.com/
 
 [![Python 3.6+](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
 <a href="https://static.pepy.tech/badge/discord-logger"><img alt="Downloads" src="https://static.pepy.tech/badge/discord-logger"></a>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/chinnichaitanya/python-discord-logger/blob/master/LICENSE)
 
 ## Install
 
