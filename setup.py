@@ -12,9 +12,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/chinnichaitanya/python-discord-logger",
     packages=setuptools.find_packages(),
-    install_requires=[
-        "discord-webhook"
-    ],
+    install_requires=["discord-webhook"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

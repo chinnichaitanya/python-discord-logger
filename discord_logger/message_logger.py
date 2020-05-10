@@ -23,7 +23,6 @@ class DiscordLogger:
             raise ValueError("The field webhook_url cannot be:", webhook_url)
         self.webhook_url = str(webhook_url)
 
-
         self.application_name = kwargs.get("application_name", "Application")
         if self.application_name is not None:
             self.application_name = str(self.application_name)
@@ -46,7 +45,9 @@ class DiscordLogger:
         if self.default_level not in self.COLORS.keys():
             self.default_level = "default"
 
-        self.discord = DiscordWebhook(url=self.webhook_url, username=self.application_name)
+        self.discord = DiscordWebhook(
+            url=self.webhook_url, username=self.application_name
+        )
 
     def __remove_embeds(self):
         existing_embeds = self.discord.get_embeds()
@@ -75,21 +76,12 @@ class DiscordLogger:
 
         embed = DiscordEmbed(title=title, description=description, color=color)
 
-        embed.set_author(
-            name=self.service_name,
-            icon_url=self.service_icon_url,
-        )
+        embed.set_author(name=self.service_name, icon_url=self.service_icon_url)
 
         if self.service_environment is not None:
-            embed.add_embed_field(
-                name="Environment",
-                value=self.service_environment
-            )
+            embed.add_embed_field(name="Environment", value=self.service_environment)
         if self.host_name is not None:
-            embed.add_embed_field(
-                name="Host",
-                value=self.host_name
-            )
+            embed.add_embed_field(name="Host", value=self.host_name)
 
         embed.set_timestamp()
 
