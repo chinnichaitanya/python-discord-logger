@@ -3,7 +3,7 @@
 A custom message logger to Discord for Python 3.
 This project was inspired from [`winston-discord-transport`](https://github.com/sidhantpanda/winston-discord-transport) for NodeJS.
 
-[![Python 3.6+](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
+<a href="https://img.shields.io/pypi/pyversions/discord-logger"><img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/discord-logger"></a>
 <a href="https://img.shields.io/pypi/wheel/discord-logger"><img alt="PyPI - Wheel" src="https://img.shields.io/pypi/wheel/discord-logger"></a>
 <a href="https://static.pepy.tech/badge/discord-logger"><img alt="Downloads" src="https://static.pepy.tech/badge/discord-logger"></a>
 [![License: MIT](https://img.shields.io/pypi/l/discord-logger)](https://github.com/chinnichaitanya/python-discord-logger/blob/master/LICENSE)
