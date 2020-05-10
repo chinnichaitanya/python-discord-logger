@@ -1,6 +1,9 @@
 # Python Discord Logger
 
 A custom message logger to Discord for Python 3.
+This project was inspired from [`winston-discord-transport`](https://github.com/sidhantpanda/winston-discord-transport) for NodeJS.
+
+[![Python 3.6+](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
 
 ## Install
 
@@ -26,6 +29,46 @@ response = logger.send()
 ```
 
 ![Image](images/basic_message.png "Basic Usage")
+
+## Configure various options
+
+There are numerous configurations available to customise the bot.
+```python
+options = {
+    # Application name would replace the webhook name set during creating of the webhook
+    # It would appear as the name of the bot
+    "application_name": "My Server",
+
+    # Service name would be the name of the service sending the message to your Discord channel
+    # This would usually be the name of the application sending the notification
+    "service_name": "Backend API",
+
+    # Service icon URL is the icon image for your application
+    # This field accepts a URL to the icon image
+    # If unspecified, the icon wouldn't be set
+    # If misconfigured, the icon wouldn't load and a blank space would appear before the service name
+    "service_icon_url": "your icon url",
+
+    # Usually services would run in staging and production environments
+    # This field is to specify the environment from which the application is reponding for easy identification
+    # If unset, this block would not appear in the message
+    "service_environment": "Production",
+
+    # The default importance level of the message
+    # The left bar color of the message would change depending on this
+    # Available options are
+    # - default: 2040357
+    # - error: 14362664
+    # - warn: 16497928
+    # - info: 2196944
+    # - verbose: 6559689
+    # - debug: 2196944
+    # - success: 2210373
+    # If the `error` field is set during the construction of the message, the `level` is automatically set to `error`
+    # If nothing is specified, `default` color would be used
+    "default_level": "info",
+}
+```
 
 ## Examples
 
