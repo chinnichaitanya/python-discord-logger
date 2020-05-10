@@ -36,7 +36,7 @@ class DiscordLogger:
         if self.service_icon_url is not None:
             self.service_icon_url = str(self.service_icon_url)
 
-        self.service_environment = kwargs.get("service_environment", "Production")
+        self.service_environment = kwargs.get("service_environment")
         if self.service_environment is not None:
             self.service_environment = str(self.service_environment)
 
