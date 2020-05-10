@@ -16,7 +16,7 @@ from discord_logger import DiscordLogger
 
 options = {
     "application_name": "My Server",
-    "service_name": "My API",
+    "service_name": "Backend API",
     "service_icon_url": "your icon url",
     "service_environment": "Production",
     "default_level": "info",
@@ -37,10 +37,12 @@ There are numerous configurations available to customise the bot.
 options = {
     # Application name would replace the webhook name set during creating of the webhook
     # It would appear as the name of the bot
+    # If unset, the default value would be "Application"
     "application_name": "My Server",
 
     # Service name would be the name of the service sending the message to your Discord channel
     # This would usually be the name of the application sending the notification
+    # If unset, the default value would be "Status Bot"
     "service_name": "Backend API",
 
     # Service icon URL is the icon image for your application
@@ -120,7 +122,7 @@ from discord_logger import DiscordLogger
 
 options = {
     "application_name": "My Server",
-    "service_name": "My API",
+    "service_name": "Backend API",
     "service_icon_url": "your icon url",
     "service_environment": "Production",
     "default_level": "info",
