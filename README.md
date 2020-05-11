@@ -144,7 +144,7 @@ response = logger.send()
 
 ![Image](images/success_message.png "Message with success log-level")
 
-- Send complete error traceback
+### Send complete error traceback
 
 The `error` field can contain any error message. It will be automatically be formatted in the final message. For example, you can send a complete traceback of an error message to debug faster!
 
