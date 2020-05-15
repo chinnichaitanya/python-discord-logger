@@ -54,27 +54,36 @@ class DiscordLogger:
         for i in reversed(range(0, len(existing_embeds))):
             self.discord.remove_embed(i)
 
-    def construct(self, title, description, level=None, error=None):
+    def construct(self, title, description, level=None, error=None, metadata=None):
         self.__remove_embeds()
 
+        _title = ""
         if title is not None:
-            title = str(title)
+            _title = str(title)
+
+        _description = ""
         if description is not None:
-            description = str(description)
+            _description = str(description) + "\n"
 
-        if level is None:
-            level = self.default_level
+        _metadata = ""
+        if metadata is not None:
+            _metadata = "\n**Metadata:\n**" + "```" + str(metadata) + "```" + "\n"
 
-        color = self.COLORS.get(level)
+        _level = level
+        if _level is None:
+            _level = self.default_level
 
+        _error = ""
+        _color = self.COLORS.get(level)
         if error is not None:
-            color = self.COLORS.get("error")
-            if description is None:
-                description = "```" + str(error) + "```"
-            else:
-                description = description + "\n" + "```" + str(error) + "```"
+            _error = "```" + str(error) + "```"
+            _color = self.COLORS.get("error")
 
-        embed = DiscordEmbed(title=title, description=description, color=color)
+        _combined_description = _description + _metadata + _error
+
+        embed = DiscordEmbed(
+            title=_title, description=_combined_description, color=_color
+        )
 
         embed.set_author(name=self.service_name, icon_url=self.service_icon_url)
 
