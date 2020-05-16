@@ -2,6 +2,8 @@ from socket import gethostname
 
 from discord_webhook import DiscordEmbed, DiscordWebhook
 
+from .utils import Bold, Code
+
 
 class DiscordLogger:
     """
@@ -67,7 +69,7 @@ class DiscordLogger:
 
         _metadata = ""
         if metadata is not None:
-            _metadata = "**Metadata:\n**" + "```" + str(metadata) + "```" + "\n"
+            _metadata = Bold("Metadata:\n") + Code(str(metadata)) + "\n"
 
         _level = level
         if _level is None:
@@ -76,7 +78,7 @@ class DiscordLogger:
         _error = ""
         _color = self.COLORS.get(level)
         if error is not None:
-            _error = "**Error:\n**" "```" + str(error) + "```"
+            _error = Bold("Error:\n") + Code(str(error))
             _color = self.COLORS.get("error")
 
         _combined_description = _description + _metadata + _error
