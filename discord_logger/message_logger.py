@@ -2,7 +2,7 @@ from socket import gethostname
 
 from discord_webhook import DiscordEmbed, DiscordWebhook
 
-from .utils import Bold, Code
+from .utils import Code
 
 
 class DiscordLogger:
@@ -67,27 +67,25 @@ class DiscordLogger:
         if description is not None:
             _description = str(description) + "\n\n"
 
-        _metadata = ""
-        if metadata is not None:
-            _metadata = Bold("Metadata:\n") + Code(str(metadata)) + "\n"
-
         _level = level
         if _level is None:
             _level = self.default_level
+        _color = self.COLORS.get(_level)
 
-        _error = ""
-        _color = self.COLORS.get(level)
-        if error is not None:
-            _error = Bold("Error:\n") + Code(str(error))
-            _color = self.COLORS.get("error")
-
-        _combined_description = _description + _metadata + _error
-
-        embed = DiscordEmbed(
-            title=_title, description=_combined_description, color=_color
-        )
+        embed = DiscordEmbed(title=_title, description=_description, color=_color)
 
         embed.set_author(name=self.service_name, icon_url=self.service_icon_url)
+
+        if metadata is not None:
+            embed.add_embed_field(
+                name="Metadata", value=Code(str(metadata)), inline=False
+            )
+
+        if error is not None:
+            embed.add_embed_field(name="Error", value=Code(str(error)), inline=False)
+
+            _color = self.COLORS.get("error")
+            embed.set_color(_color)
 
         if self.service_environment is not None:
             embed.add_embed_field(name="Environment", value=self.service_environment)
