@@ -1,6 +1,7 @@
 from socket import gethostname
 
 from discord_webhook import DiscordEmbed, DiscordWebhook
+from yaml import dump
 
 from .utils import Code
 
@@ -77,8 +78,12 @@ class DiscordLogger:
         embed.set_author(name=self.service_name, icon_url=self.service_icon_url)
 
         if metadata is not None:
+            _metadata = dump(
+                metadata, indent=4, default_flow_style=False, sort_keys=False
+            )
+
             embed.add_embed_field(
-                name="Metadata", value=Code(str(metadata)), inline=False
+                name="Metadata", value=Code(str(_metadata)), inline=False
             )
 
         if error is not None:

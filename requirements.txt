@@ -1,4 +1,5 @@
-black == 19.10b0
 discord_webhook == 0.7.1
+pyyaml == 5.3.1
 pre-commit == 2.3.0
+black == 19.10b0
 flake8 == 3.7.9
