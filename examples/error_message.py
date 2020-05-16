@@ -13,7 +13,8 @@ logger = DiscordLogger(webhook_url=webhook_url, **options)
 
 logger.construct(
     title="Health Check",
-    description="Issue in Auth API!",
+    description="Issue in establishing DB connections!",
+    metadata={"module": "DBConnector", "host": 123.332},
     error="Traceback (most recent call last):\n ValueError: Database connect accepts only string as a parameter!",
 )
 response = logger.send()

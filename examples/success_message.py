@@ -15,5 +15,13 @@ logger.construct(
     title="Celery Task Manager",
     description="Successfully completed training job for model v1.3.3!",
     level="success",
+    metadata={
+        "Metrics": {
+            "Accuracy": 78.9,
+            "Inference time": "0.8 sec",
+            "Model size": "32 MB",
+        },
+        "Deployment status": "progress",
+    },
 )
 response = logger.send()

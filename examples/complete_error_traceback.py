@@ -28,6 +28,9 @@ err = KeyError("`email` field cannot be None")
 logger = DiscordLogger(webhook_url=webhook_url, **options)
 
 logger.construct(
-    title="Runtime Exception", description=err.__str__(), error=get_traceback(err),
+    title="Runtime Exception",
+    description=err.__str__(),
+    error=get_traceback(err),
+    metadata={"email": None, "module": "auth", "method": "POST"},
 )
 response = logger.send()
