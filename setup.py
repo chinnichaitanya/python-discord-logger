@@ -7,7 +7,7 @@ setuptools.setup(
     name="discord-logger",
     version="1.1.0",
     author="Chaitanya Chinni",
-    description="Disccord Logger is a custom message logger to Discord for Python 3.",
+    description="Discord Logger is a custom message logger to Discord for Python 3+",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/chinnichaitanya/python-discord-logger",
