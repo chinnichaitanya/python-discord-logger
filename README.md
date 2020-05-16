@@ -37,6 +37,7 @@ response = logger.send()
 ## Configure various options
 
 There are numerous configurations available to customise the bot.
+
 ```python
 options = {
     # Application name would replace the webhook name set during creating of the webhook
@@ -82,6 +83,9 @@ options = {
 
 You can configure the log message with service name, icon and environment for easy identification. The `Host` field which is the hostname of the server is automatically added for every message.
 
+You can even send any meta information like the data in the variables, module names, metrics etc with the `metadata` field while constructing the message.
+These data should be passed as a dictionary.
+
 ```python
 from discord_logger import DiscordLogger
 
@@ -97,8 +101,9 @@ options = {
 logger = DiscordLogger(webhook_url=webhook_url, **options)
 logger.construct(
     title="Health Check",
-    description="Issue in Auth API!",
+    description="Issue in establishing DB connections!",
     error="Traceback (most recent call last):\n ValueError: Database connect accepts only string as a parameter!",
+    metadata={"module": "DBConnector", "host": 123.332},
 )
 
 response = logger.send()
@@ -121,6 +126,8 @@ The log-level can be set during construction of the message like through the par
 
 If the parameter isn't provided, it'll be set to the one given in `default_level`. Any invalid input would be ignored and the log-level would be automatically be set to `default`.
 
+Any complicated nested dictionary can be passed to the `metadata` field and the message gets forrmatted accordingly for easy reading.
+
 ```python
 from discord_logger import DiscordLogger
 
@@ -137,6 +144,14 @@ logger.construct(
     title="Celery Task Manager",
     description="Successfully completed training job for model v1.3.3!",
     level="success",
+    metadata={
+        "Metrics": {
+            "Accuracy": 78.9,
+            "Inference time": "0.8 sec",
+            "Model size": "32 MB",
+        },
+        "Deployment status": "progress",
+    },
 )
 
 response = logger.send()
@@ -178,7 +193,10 @@ err = KeyError("`email` field cannot be None")
 
 logger = DiscordLogger(webhook_url=webhook_url, **options)
 logger.construct(
-    title="Runtime Exception", description=err.__str__(), error=get_traceback(err),
+    title="Runtime Exception",
+    description=err.__str__(),
+    error=get_traceback(err),
+    metadata={"email": None, "module": "auth", "method": "POST"},
 )
 
 response = logger.send()
