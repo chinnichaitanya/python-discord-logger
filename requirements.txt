@@ -1,5 +1,5 @@
-discord_webhook == 0.7.1
+discord_webhook == 0.8.0
 pyyaml == 5.3.1
-pre-commit == 2.3.0
+pre-commit == 2.4.0
 black == 19.10b0
-flake8 == 3.7.9
+flake8 == 3.8.1
