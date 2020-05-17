@@ -57,7 +57,9 @@ class DiscordLogger:
         for i in reversed(range(0, len(existing_embeds))):
             self.discord.remove_embed(i)
 
-    def construct(self, title, description, level=None, error=None, metadata=None):
+    def construct(
+        self, title=None, description=None, level=None, error=None, metadata=None
+    ):
         self.__remove_embeds()
 
         _title = ""
