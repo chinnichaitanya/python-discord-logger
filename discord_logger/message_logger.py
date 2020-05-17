@@ -68,7 +68,7 @@ class DiscordLogger:
 
         _description = ""
         if description is not None:
-            _description = str(description) + "\n\n"
+            _description = str(description)
 
         _level = level
         if _level is None:
