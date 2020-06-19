@@ -20,6 +20,15 @@ class DiscordLogger:
         "debug": 2196944,
         "success": 2210373,
     }
+    EMOJIS = {
+        "default": ":loudspeaker:",
+        "error": ":x:",
+        "warn": ":warning:",
+        "info": ":bell:",
+        "verbose": ":mega:",
+        "debug": ":microscope:",
+        "success": ":rocket:",
+    }
 
     def __init__(self, webhook_url, **kwargs):
         if webhook_url is None:
@@ -62,21 +71,23 @@ class DiscordLogger:
     ):
         self.__remove_embeds()
 
+        _level = level
+        if _level is None:
+            _level = self.default_level
+        if error is not None:
+            _level = "error"
+
+        _color = self.COLORS.get(_level)
+
         _title = ""
         if title is not None:
-            _title = str(title)
+            _title = self.EMOJIS.get(_level) + " " + str(title)
 
         _description = ""
         if description is not None:
             _description = str(description)
 
-        _level = level
-        if _level is None:
-            _level = self.default_level
-        _color = self.COLORS.get(_level)
-
         embed = DiscordEmbed(title=_title, description=_description, color=_color)
-
         embed.set_author(name=self.service_name, icon_url=self.service_icon_url)
 
         if metadata is not None:
@@ -90,9 +101,6 @@ class DiscordLogger:
 
         if error is not None:
             embed.add_embed_field(name="Error", value=Code(str(error)), inline=False)
-
-            _color = self.COLORS.get("error")
-            embed.set_color(_color)
 
         if self.service_environment is not None:
             embed.add_embed_field(name="Environment", value=self.service_environment)
