@@ -5,7 +5,7 @@ This project was inspired from [`winston-discord-transport`](https://github.com/
 and built using [discord-webhook](https://github.com/lovvskillz/python-discord-webhook), which offers an easy interface for
 constructing and sending messages through a Discord webhook.
 
-If you are looking for a Slack alternative, please check to [python-slack-logger](https://github.com/chinnichaitanya/python-slack-logger).
+If you are looking for a Slack alternative, please check [python-slack-logger](https://github.com/chinnichaitanya/python-slack-logger).
 
 <a href="https://pypi.org/project/discord-logger/"><img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/discord-logger"></a>
 [![PyPI version](https://badge.fury.io/py/discord-logger.svg)](https://badge.fury.io/py/discord-logger)
