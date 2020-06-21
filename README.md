@@ -35,7 +35,7 @@ logger.construct(title="Health Check", description="All services are running nor
 response = logger.send()
 ```
 
-![Image](images/basic_message.png "Basic Usage")
+![Image](https://raw.githubusercontent.com/chinnichaitanya/python-discord-logger/master/images/basic_message.png "Basic Usage")
 
 ## Configure various options
 
@@ -86,13 +86,13 @@ An appropriate emoji is automatically added before the title depending on the `l
 
 Following is the map between `level` and the emoji added.
 
- - default = `:loudspeaker:` 📢
- - error = `:x:` ❌
- - warn = `:warning:` ⚠️
- - info = `:bell:` 🔔
- - verbose = `:mega:` 📣
- - debug = `:microscope:` 🔬
- - success = `:rocket:` 🚀
+- default = `:loudspeaker:` 📢
+- error = `:x:` ❌
+- warn = `:warning:` ⚠️
+- info = `:bell:` 🔔
+- verbose = `:mega:` 📣
+- debug = `:microscope:` 🔬
+- success = `:rocket:` 🚀
 
 ## Examples
 
@@ -126,7 +126,7 @@ logger.construct(
 response = logger.send()
 ```
 
-![Image](images/error_message.png "Message with Service Name, Icon and Environment")
+![Image](https://raw.githubusercontent.com/chinnichaitanya/python-discord-logger/master/images/error_message.png "Message with Service Name, Icon and Environment")
 
 ### Send messages with different log-levels
 
@@ -174,7 +174,7 @@ logger.construct(
 response = logger.send()
 ```
 
-![Image](images/success_message.png "Message with success log-level")
+![Image](https://raw.githubusercontent.com/chinnichaitanya/python-discord-logger/master/images/success_message.png "Message with success log-level")
 
 ### Send complete error traceback
 
@@ -219,4 +219,4 @@ logger.construct(
 response = logger.send()
 ```
 
-![Image](images/complete_error_traceback.png "Message with complete error traceback")
+![Image](https://raw.githubusercontent.com/chinnichaitanya/python-discord-logger/master/images/complete_error_traceback.png "Message with complete error traceback")
