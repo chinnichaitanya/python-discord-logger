@@ -28,6 +28,7 @@ options = {
     "service_name": "Backend API",
     "service_icon_url": "your icon url",
     "service_environment": "Production",
+    "display_hostname": True,
     "default_level": "info",
 }
 
