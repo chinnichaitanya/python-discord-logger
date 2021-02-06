@@ -52,6 +52,8 @@ class DiscordLogger:
             self.service_environment = str(self.service_environment)
 
         self.host_name = gethostname()
+        if kwargs.get("display_hostname") is False:
+            self.host_name = None
 
         self.default_level = kwargs.get("default_level")
         if self.default_level not in self.COLORS.keys():
@@ -67,7 +69,12 @@ class DiscordLogger:
             self.discord.remove_embed(i)
 
     def construct(
-        self, title=None, description=None, level=None, error=None, metadata=None
+        self,
+        title=None,
+        description=None,
+        level=None,
+        error=None,
+        metadata=None,
     ):
         self.__remove_embeds()
 
