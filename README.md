@@ -1,6 +1,6 @@
 # Python Discord Logger
 
-A custom message logger to Discord for Python 3+.
+A custom message logger to Discord for Python 3.
 This project was inspired from [`winston-discord-transport`](https://github.com/sidhantpanda/winston-discord-transport) for NodeJS
 and built using [discord-webhook](https://github.com/lovvskillz/python-discord-webhook), which offers an easy interface for
 constructing and sending messages through a Discord webhook.
