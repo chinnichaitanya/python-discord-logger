@@ -66,6 +66,10 @@ options = {
     # If unset, this block would not appear in the message
     "service_environment": "Production",
 
+    # An option to specify whether or not to display the hostname in the messages
+    # The hostname is set by default, but it could be disabled by specifically setting this to `False`
+    "display_hostname": True,
+
     # The default importance level of the message
     # The left bar color of the message would change depending on this
     # Available options are
@@ -129,6 +133,31 @@ response = logger.send()
 ```
 
 ![Image](https://raw.githubusercontent.com/chinnichaitanya/python-discord-logger/master/images/error_message.png "Message with Service Name, Icon and Environment")
+
+### Send messages without Hostname
+
+In case you do not want the hostname to be displayed in the message, disable it by setting `"display_hostname": False` in the `options` as follows.
+
+```python
+from discord_logger import DiscordLogger
+
+webhook_url = "your discord webhook url"
+options = {
+    "application_name": "My Server",
+    "service_name": "Backend API",
+    "service_icon_url": "your icon url",
+    "service_environment": "Production",
+    "default_level": "info",
+    "display_hostname": False,
+}
+
+logger = DiscordLogger(webhook_url=webhook_url, **options)
+logger.construct(title="Health Check", description="All services are running normally!")
+
+response = logger.send()
+```
+
+![Image](https://raw.githubusercontent.com/chinnichaitanya/python-discord-logger/master/images/basic_message_without_hostname.png "Basic message without Hostname")
 
 ### Send messages with different log-levels
 
