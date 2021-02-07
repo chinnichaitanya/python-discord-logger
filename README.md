@@ -87,7 +87,7 @@ options = {
 }
 ```
 
-## Emojis inbuilt! 😀
+## Emojis inbuilt! 😃
 
 An appropriate emoji is automatically added before the title depending on the `level`.
 
