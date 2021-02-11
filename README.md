@@ -180,6 +180,7 @@ Any complicated nested dictionary can be passed to the `metadata` field and the 
 ```python
 from discord_logger import DiscordLogger
 
+webhook_url = "your discord webhook url"
 options = {
     "application_name": "My Server",
     "service_name": "Backend API",
