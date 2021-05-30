@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/chinnichaitanya/python-discord-logger",
     packages=setuptools.find_packages(),
-    install_requires=["discord-webhook == 0.11.0", "pyyaml == 5.4.1"],
+    install_requires=["discord-webhook == 0.13.0", "pyyaml == 5.4.1"],
     classifiers=[
         "Environment :: Web Environment",
         "Intended Audience :: Developers",
