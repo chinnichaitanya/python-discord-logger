@@ -59,9 +59,10 @@ class DiscordLogger:
         if self.default_level not in self.COLORS.keys():
             self.default_level = "default"
 
-        proxies = kwargs.get('proxies')
         self.discord = DiscordWebhook(
-            url=self.webhook_url, username=self.application_name, proxies=proxies
+            url=self.webhook_url, username=self.application_name, 
+            proxies=kwargs.get('proxies'),
+            rate_limit_retry=kwargs.get('rate_limit_retry')
         )
 
     def __remove_embeds(self):
