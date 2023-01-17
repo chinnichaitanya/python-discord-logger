@@ -84,6 +84,12 @@ options = {
     # If the `error` field is set during the construction of the message, the `level` is automatically set to `error`
     # If nothing is specified, `default` color would be used
     "default_level": "info",
+    
+    # specify proxies to use, default is None
+    proxies = {
+      'http': 'http://10.10.1.10:3128',
+      'https': 'http://10.10.1.10:1080',
+    }
 }
 ```
 

@@ -60,7 +60,9 @@ class DiscordLogger:
             self.default_level = "default"
 
         self.discord = DiscordWebhook(
-            url=self.webhook_url, username=self.application_name
+            url=self.webhook_url, username=self.application_name, 
+            proxies=kwargs.get('proxies'),
+            rate_limit_retry=kwargs.get('rate_limit_retry')
         )
 
     def __remove_embeds(self):
