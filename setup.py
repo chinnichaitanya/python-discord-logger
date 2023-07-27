@@ -5,7 +5,7 @@ with open("README.md", mode="r") as fd:
 
 setuptools.setup(
     name="discord-logger",
-    version="1.2.3",
+    version="1.2.4",
     author="Chaitanya Chinni",
     description="Discord Logger is a custom message logger to Discord for Python 3",
     license="MIT License",
