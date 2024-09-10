@@ -62,7 +62,9 @@ class DiscordLogger:
         self.discord = DiscordWebhook(
             url=self.webhook_url, username=self.application_name, 
             proxies=kwargs.get('proxies'),
-            rate_limit_retry=kwargs.get('rate_limit_retry')
+            rate_limit_retry=kwargs.get('rate_limit_retry'),
+            allowed_mentions=kwargs.get('allowed_mentions'),
+            content=kwargs.get('content')
         )
 
     def __remove_embeds(self):
