@@ -84,12 +84,25 @@ options = {
     # If the `error` field is set during the construction of the message, the `level` is automatically set to `error`
     # If nothing is specified, `default` color would be used
     "default_level": "info",
+
+    # if rate_limit_retry is True then in the event that you are being rate limited by Discord
+    # your webhook will automatically be sent once the rate limit has been lifted
+    "rate_limit_retry": True,
     
     # specify proxies to use, default is None
     proxies = {
       'http': 'http://10.10.1.10:3128',
       'https': 'http://10.10.1.10:1080',
-    }
+    },
+
+    # allow & parse roles mentioned in the content. For more info read https://discord.com/developers/docs/resources/message#allowed-mentions-object
+    "allowed_mentions": {
+        'parse': ['roles'],
+    },
+
+    # content - the message that is displayed above the DiscordEmbed. We can use this place to mention any role or user
+    "content" : "@everyone we just launched the next version of our app!"
+    
 }
 ```
 
