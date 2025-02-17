@@ -5,7 +5,7 @@ with open("README.md", mode="r") as fd:
 
 setuptools.setup(
     name="discord-logger",
-    version="1.2.3",
+    version="1.2.4",
     author="Chaitanya Chinni",
     description="Discord Logger is a custom message logger to Discord for Python 3",
     license="MIT License",
@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/chinnichaitanya/python-discord-logger",
     packages=setuptools.find_packages(),
-    install_requires=["discord-webhook == 0.13.0", "pyyaml == 5.4.1"],
+    install_requires=["discord-webhook == 0.13.0", "pyyaml >= 6.0.1"],
     classifiers=[
         "Environment :: Web Environment",
         "Intended Audience :: Developers",
