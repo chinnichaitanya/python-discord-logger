@@ -13,6 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/chinnichaitanya/python-discord-logger",
     packages=setuptools.find_packages(),
+    # todo: this should come from requirements.txt
     install_requires=["discord-webhook == 0.15.0", "pyyaml == 6.0.1"],
     classifiers=[
         "Environment :: Web Environment",

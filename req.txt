@@ -1,0 +1,5 @@
+discord_webhook 
+pyyaml 
+pre-commit 
+black 
+flake8 
