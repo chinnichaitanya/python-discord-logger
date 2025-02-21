@@ -16,7 +16,7 @@ If you are looking for a Slack alternative, please check [python-slack-logger](h
 
 ## Install
 
-Install via pip: `pip install discord-logger-ng`
+Install via pip: `pip install discord-logger`
 
 ## Basic Usage
 
