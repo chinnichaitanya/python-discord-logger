@@ -1,4 +1,5 @@
 from socket import gethostname
+from urllib.parse import urlparse
 
 from discord_webhook import DiscordEmbed, DiscordWebhook
 from yaml import dump
@@ -34,6 +35,9 @@ class DiscordLogger:
         if webhook_url is None:
             raise ValueError("The field webhook_url cannot be:", webhook_url)
         self.webhook_url = str(webhook_url)
+        parsed_url = urlparse(self.webhook_url)
+        if parsed_url.scheme not in ("http", "https") or not parsed_url.netloc:
+            raise ValueError("The field webhook_url must be a valid URL:", webhook_url)
 
         self.application_name = kwargs.get("application_name", "Application")
         if self.application_name is not None:
