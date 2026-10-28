@@ -1,5 +1,5 @@
 discord_webhook == 0.15.0
 pyyaml == 6.0.1
 pre-commit == 2.17.0
-black == 22.8.0
+black == 26.10.1
 flake8 == 5.0.4
